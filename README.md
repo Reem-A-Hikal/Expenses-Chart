@@ -36,7 +36,7 @@ Users should be able to:
 
 ## 🔗 Links
 
-- 🔧 [Solution URL](https://github.com/Reem-A-Hikal/Expenses-Chart)
+- 🔧 [Solution URL](https://www.frontendmentor.io/solutions/responsive-bar-chart-with-json-fetching-and-js-tooltip-interaction-6ve1DiS7yf)
 - 🌐 [Live Site URL](https://reem-a-hikal.github.io/Expenses-Chart/)
 
 ---
@@ -59,7 +59,9 @@ Users should be able to:
 - 🧼 Writing clean, reusable DOM elements in JavaScript.
 
 Example logic:
+
 ```js
-const maxAmount = Math.max(...data.map(item => item.amount));
+const maxAmount = Math.max(...data.map((item) => item.amount));
 const height = (item.amount / maxAmount) * 100;
 bar.style.height = `${height}%`;
+```
