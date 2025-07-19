@@ -1,76 +1,65 @@
-# Frontend Mentor - Expenses chart component solution
+# 💸 Frontend Mentor - Expenses Chart Component Solution
 
-This is a solution to the [Expenses chart component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/expenses-chart-component-e7yJBUdjwt).
+This is a solution to the [Frontend Mentor - Expenses chart component challenge](https://www.frontendmentor.io/challenges/expenses-chart-component-e7yJBUdjwt).
 
-## Table of contents
+---
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
+## 📋 Table of Contents
 
-## Overview
+- [📌 Overview](#-overview)
+  - [🎯 The Challenge](#-the-challenge)
+  - [🖼️ Screenshot](#️-screenshot)
+  - [🔗 Links](#-links)
+- [⚙️ My Process](#️-my-process)
+  - [🛠️ Built With](#️-built-with)
+  - [📚 What I Learned](#-what-i-learned)
+  - [🔍 Useful Resources](#-useful-resources)
+- [🙋‍♀️ Author](#-author)
 
-Responsive Bar Chart with JSON Fetching and JS Tooltip Interaction
+---
 
-### The challenge
+## 📌 Overview
+
+### 🎯 The Challenge
 
 Users should be able to:
 
-- View the bar chart and hover over the individual bars to see the correct amounts for each day
-- See the current day’s bar highlighted in a different colour to the other bars
-- View the optimal layout for the content depending on their device’s screen size
-- See hover states for all interactive elements on the page
-- **Bonus**: Use the JSON data file provided to dynamically size the bars on the chart
+- ✅ View the bar chart and hover over the individual bars to see the correct amounts for each day.
+- ✅ See the current day’s bar highlighted in a different colour.
+- ✅ View an optimal layout depending on their screen size.
+- ✅ Experience hover states on all interactive elements.
+- 🌟 **Bonus**: Use JSON data to dynamically size the bars.
 
-### Screenshot
+### 🖼️ Screenshot
 
-![](./screenshots/Desktop.png)
+![Desktop Screenshot](./screenshots/Desktop.png)
 
-### Links
+## 🔗 Links
 
-- Solution URL: [](https://your-solution-url.com)
-- Live Site URL: [](https://your-live-site-url.com)
+- 🔧 [Solution URL](https://github.com/Reem-A-Hikal/expenses-chart-solution)
+- 🌐 [Live Site URL](https://reem-a-hikal.github.io/expenses-chart-solution)
 
-## My process
+---
 
-### Built with
+## ⚙️ My Process
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- Mobile-first workflow
-- Vanilla JavaScript (fetch, DOM manipulation, and dynamic bar heights)
+### 🛠️ Built With
 
-### What I learned
+- ✅ Semantic **HTML5**
+- ✅ **CSS Custom Properties**
+- ✅ **Flexbox**
+- ✅ **Mobile-first** responsive design
+- ✅ **Vanilla JavaScript** (`fetch`, DOM manipulation, and dynamic styling)
 
-- How to dynamically style elements based on JSON data.
+### 📚 What I Learned
 
-- Using Math.max to calculate the tallest bar reference.
+- 📊 How to dynamically style bars based on values from JSON data.
+- 🧠 Using `Math.max` to scale the bars proportionally.
+- 🎨 Creating CSS tooltips with smooth hover effects.
+- 🧼 Writing clean, reusable DOM elements in JavaScript.
 
-- Handling tooltips and hover effects using pure CSS.
-
-- Better understanding of creating reusable and clean DOM structure via JavaScript.
-
-Example code:
-
+Example logic:
+```js
 const maxAmount = Math.max(...data.map(item => item.amount));
-const height = (item.amount / maxAmount) \* 100;
+const height = (item.amount / maxAmount) * 100;
 bar.style.height = `${height}%`;
-
-### Useful resources
-
-- [MDN - Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [CSS Tricks - A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-
-## Author
-
-- Frontend Mentor - [@Reem-A-Hikal](https://www.frontendmentor.io/profile/Reem-A-Hikal)
-- LinkedIn - [Reem Heikal](linkedin.com/in/reem-heikal)
-- GitHub - [Reem-A-Hikal](https://github.com/Reem-A-Hikal)
