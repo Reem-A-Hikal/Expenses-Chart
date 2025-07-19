@@ -36,8 +36,8 @@ Users should be able to:
 
 ## 🔗 Links
 
-- 🔧 [Solution URL](https://github.com/Reem-A-Hikal/expenses-chart-solution)
-- 🌐 [Live Site URL](https://reem-a-hikal.github.io/expenses-chart-solution)
+- 🔧 [Solution URL](https://github.com/Reem-A-Hikal/Expenses-Chart)
+- 🌐 [Live Site URL](https://reem-a-hikal.github.io/Expenses-Chart/)
 
 ---
 
