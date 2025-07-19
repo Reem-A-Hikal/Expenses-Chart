@@ -2,7 +2,7 @@ fetch("data.json")
   .then((res) => res.json())
   .then((data) => {
     console.log(data);
-    this.renderChart(data);
+    renderChart(data);
   });
 
 function renderChart(data) {
