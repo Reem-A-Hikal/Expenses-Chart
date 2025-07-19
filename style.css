@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: hsl(26, 66%, 93%);
+}
+
+.wrapper {
+  min-height: 97vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.balance-card {
+  background-color: hsl(10, 79%, 65%);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
+
+.balance-card .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.balance-card .content .label {
+  font-size: 11px;
+  font-weight: 200;
+  margin-bottom: 0.2rem;
+}
+
+.balance-card .content .balance {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.balance-card img {
+  width: 15%;
+}
+
+.chart {
+  position: relative;
+  background-color: white;
+  padding: 1.4rem;
+  border-radius: 0.75rem;
+  color: hsl(25, 47%, 15%);
+  margin-top: 0.75rem;
+}
+
+.chart .title {
+  font-size: 1.19rem;
+}
+
+.chart .bars {
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+  height: 7rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid hsl(26, 66%, 93%);
+}
+
+.chart .bars li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  width: 2rem;
+  cursor: pointer;
+}
+
+.chart .bars .bar {
+  position: relative;
+  background-color: hsl(10, 79%, 65%);
+  width: 100%;
+  border-radius: 3px;
+  transition: height 0.3s ease;
+}
+
+.chart .bars .bar:hover {
+  background-color: hsl(10, 79%, 75%);
+}
+
+.chart .bars .bar[current-day] {
+  background-color: hsl(186, 34%, 65%);
+}
+
+.chart .bars .bar[current-day]:hover {
+  background-color: hsl(186, 34%, 75%);
+}
+
+.chart .bars .tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: hsl(25, 47%, 15%);
+  color: white;
+  font-size: 10px;
+  padding: 4px 6px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  display: none;
+}
+
+.chart .bars .bar:hover .tooltip {
+  display: block;
+}
+
+.chart .bars .day {
+  margin-top: 5px;
+  font-size: 10px;
+  text-align: center;
+  color: hsl(28, 10%, 53%);
+}
+
+.chart .total {
+  padding-top: 1rem;
+}
+
+.chart .total .desc {
+  color: hsl(28, 10%, 53%);
+  font-size: 0.65rem;
+}
+
+.chart .total .amount {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.chart .total .percent {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.65rem;
+  color: hsl(28, 10%, 53%);
+  bottom: 1.65rem;
+  right: 1.4rem;
+}
+
+.chart .total .percent .increase {
+  color: hsl(25, 47%, 15%);
+  font-weight: 900;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 441px) {
+  .chart .bars {
+    height: 10rem;
+  }
+  .chart .title {
+    font-size: 1.25rem;
+  }
+}
