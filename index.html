@@ -30,13 +30,27 @@
           <span class="balance-label">My balance</span>
           <span class="balance-amount">$921.48</span>
         </div>
-        <img class="balance-icon" src="images/logo.svg" alt="Logo" />
+        <img
+          class="balance-icon"
+          src="images/logo.svg"
+          alt=""
+          role="presentation"
+        />
       </header>
       <!-- Chart Section -->
-      <figure class="chart">
-        <figcaption class="chart-title">Spending - Last 7 days</figcaption>
+      <figure
+        class="chart"
+        aria-labelledby="chart-title"
+        aria-describedby="chart-desc"
+      >
+        <figcaption id="chart-title" class="chart-title">
+          Spending - Last 7 days
+        </figcaption>
+        <p id="chart-desc" class="visually-hidden">
+          Bar chart showing daily spending for the last 7 days. Each bar
+          represents one day's total spending amount.
+        </p>
         <ul class="bars"></ul>
-        <!-- footer Section -->
         <div class="chart-total">
           <div class="total-desc">Total this month</div>
           <div class="total-amount">$478.33</div>

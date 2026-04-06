@@ -1,33 +1,49 @@
 const barsContainer = document.querySelector(".bars");
 
-fetch("data.json")
-  .then((res) => res.json())
-  .then((data) => {
-    console.log(data);
-    renderChart(data);
-  })
-  .catch((err) => {
-    console.error("Error fetching data:", err);
-    barsContainer.innerHTML = "<p class='error'>Failed to load data.</p>";
-  });
+if (barsContainer) {
+  fetch("data.json")
+    .then((res) => {
+      if (!res.ok)
+        throw new Error(`Network response was not ok: ${res.status}`);
+      return res.json();
+    })
+    .then((data) => {
+      renderChart(data);
+    })
+    .catch((err) => {
+      console.error("Error fetching data:", err);
+      barsContainer.innerHTML = "<p class='error'>Failed to load data.</p>";
+    });
+} else {
+  console.error("Bars container not found in the DOM.");
+}
 
-barsContainer.innerHTML = "";
 function renderChart(data) {
-  if (!data || data.length === 0) return;
+  barsContainer.innerHTML = "";
+
+  if (!Array.isArray(data) || data.length === 0) {
+    barsContainer.innerHTML =
+      "<p class='error'>No data available to display.</p>";
+    return;
+  }
+
   const maxAmount = Math.max(...data.map((item) => item.amount)) || 1;
 
   const todayIndex = new Date().getDay();
   const days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
   const currentDay = days[todayIndex];
 
+  const fragment = document.createDocumentFragment();
+
   data.forEach((item) => {
     const li = document.createElement("li");
 
     const bar = document.createElement("button");
     bar.classList.add("bar");
+    bar.type = "button";
 
     const height = (item.amount / maxAmount) * 100;
-    bar.style.height = `${height}%`;
+    bar.style.height = `${height.toFixed(2)}%`;
 
     const isToday = item.day === currentDay;
     if (isToday) bar.classList.add("current-day");
@@ -51,6 +67,7 @@ function renderChart(data) {
     li.appendChild(bar);
     li.appendChild(day);
 
-    barsContainer.appendChild(li);
+    fragment.appendChild(li);
   });
+  barsContainer.appendChild(fragment);
 }
