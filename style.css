@@ -66,7 +66,6 @@ body {
   position: relative;
   background-color: white;
   padding: clamp(1.25rem, 3vw, 1.4rem);
-
   border-radius: 0.75rem;
   color: var(--text-dark);
   margin-block-start: 0.75rem;
@@ -92,8 +91,7 @@ body {
   height: clamp(8rem, 22vh, 13rem);
   gap: clamp(0.25rem, 1.5vw, 0.5rem);
   justify-content: space-around;
-  padding-block-start: 2rem;
-  padding-block-end: 1rem;
+  padding: 2rem 0 1rem;
   border-block-end: 2px solid var(--bg-light);
 }
 
@@ -104,7 +102,6 @@ body {
   justify-content: flex-end;
   height: 100%;
   width: clamp(1.75rem, 5vw, 2.3rem);
-  cursor: pointer;
 }
 
 .bar {

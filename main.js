@@ -1,22 +1,23 @@
 const barsContainer = document.querySelector(".bars");
 
-if (barsContainer) {
-  fetch("data.json")
-    .then((res) => {
-      if (!res.ok)
-        throw new Error(`Network response was not ok: ${res.status}`);
-      return res.json();
-    })
-    .then((data) => {
-      renderChart(data);
-    })
-    .catch((err) => {
-      console.error("Error fetching data:", err);
-      barsContainer.innerHTML = "<p class='error'>Failed to load data.</p>";
-    });
-} else {
-  console.error("Bars container not found in the DOM.");
+async function loadData() {
+  if (!barsContainer) {
+    console.error("Bars container not found in the DOM.");
+  }
+  try {
+    const response = await fetch("data.json");
+    if (!response.ok) {
+      throw new Error(`Network response was not ok: ${response.status}`);
+    }
+    const data = await response.json();
+    renderChart(data);
+  } catch (err) {
+    console.error("Error fetching data:", err);
+    barsContainer.innerHTML = "<p class='error'>Failed to load data.</p>";
+  }
 }
+
+await loadData();
 
 function renderChart(data) {
   barsContainer.innerHTML = "";
